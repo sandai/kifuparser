@@ -1,0 +1,5 @@
+if ("process" in global) {
+  module["exports"] = kifuParser;
+}
+
+global["kifuParser" in global ? "kifuParser_" : "kifuParser"] = kifuParser;

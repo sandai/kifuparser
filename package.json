@@ -1,0 +1,50 @@
+{
+  "name": "kifu-parser",
+  "description": "Convert Kifu(game record) data format of Shogi(Japanese Chess) to JSON.",
+  "version": "0.0.1",
+  "author": "sandai <sandai310@gmail.com>",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-header": "^1.2.2",
+    "gulp-jasmine": "^1.0.1",
+    "gulp-jshint": "^1.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-strip-code": "^0.1.2",
+    "gulp-webpack": "^1.1.2",
+    "jasmine-core": "^2.1.3",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.28",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.3",
+    "karma-jasmine-html-reporter": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-webpack": "^1.3.1",
+    "raw-loader": "^0.5.1",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.2",
+    "webpack": "^1.4.14",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "index.js",
+    "package.json",
+    "LICENSE"
+  ],
+  "keywords": [
+    "kifu",
+    "parser",
+    "shogi",
+    "kif",
+    "ki2",
+    "csa"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  }
+}

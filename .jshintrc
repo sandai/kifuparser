@@ -1,0 +1,20 @@
+{
+// http://www.jshint.com/docs/options/
+
+    // --- Enforcing options ---
+    "bitwise"     : false,
+    "curly"       : true,
+    "undef"       : true,
+    "unused"      : true,
+    "newcap"      : false,
+
+    // --- Relaxing options ---
+    "debug"       : true,
+    "sub"         : true,
+
+    // --- Environments ---
+    "browser"     : true,
+    "node"        : true,
+    "jasmine"     : true,
+    "nonstandard" : true
+}
