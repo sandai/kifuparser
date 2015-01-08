@@ -1,4 +1,4 @@
-#KifuParser.js
+#kifuParser.js
 
 kif, ki2, and csa data format into JSON or JavaScript Object
 
@@ -79,7 +79,7 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 ## Usage
 
 ```js
-KifuParser(source, format, json);
+kifuParser(source, format, json);
 ```
 
 * source
@@ -98,17 +98,17 @@ KifuParser(source, format, json);
 ###Browser:
 
 ```html
-<script src="KifuParser-x.x.x.min.js"></script>
+<script src="kifuParser-x.x.x.min.js"></script>
 <script>
 // example source
 var kif = '1 ７六歩(77)   ( 0:01/00:00:01)\n' +
           '2 ３四歩(33)   ( 0:01/00:00:01)';
 
 // export JavaScript Object
-var jo = KifuParser(kif, 'Kif', false);
+var jo = kifuParser(kif, 'Kif', false);
 
 // export JSON
-var json = KifuParser(kif, 'Kif', true);
+var json = kifuParser(kif, 'Kif', true);
 </script>
 ```
 
@@ -121,7 +121,7 @@ npm install kifu-parser --save-dev
 
 ####example
 ```js
-var KifuParser = require('kifu-parser');
+var kifuParser = require('kifu-parser');
 
 // example source
 var kif = '1 ７六歩(77)   ( 0:01/00:00:01)\n' +
@@ -129,10 +129,10 @@ var kif = '1 ７六歩(77)   ( 0:01/00:00:01)\n' +
 
 
 // export JavaScript Object
-var jo = KifuParser(kif, 'Kif', false);
+var jo = kifuParser(kif, 'Kif', false);
 
 // export json
-var json = KifuParser(kif, 'Kif', true);
+var json = kifuParser(kif, 'Kif', true);
 ```
 
 ## Licence
