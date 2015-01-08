@@ -5,7 +5,6 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 ##Kifu Format of JSON
 
 {
-
 * header[object]
 	* date[object]
 		* start[string]
@@ -75,7 +74,6 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 				* .
 	* [object]
 		* special[string]
-
 }
 
 ## Usage
