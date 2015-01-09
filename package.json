@@ -3,10 +3,6 @@
   "description": "Convert Kifu(game record) data format of Shogi(Japanese Chess) to JSON.",
   "version": "0.0.1",
   "author": "sandai <sandai310@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sandai/kifuparser.git"
-  },
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.10",
@@ -48,6 +44,10 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandai/kifuparser.git"
+  },
   "scripts": {
     "test": "gulp test"
   }
