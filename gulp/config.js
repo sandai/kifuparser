@@ -1,14 +1,11 @@
 "use strict";
 
-var path = require('path'),
-    fs = require('fs'),
-    webpack = require('webpack'),
-    current = process.cwd();
+var fs = require('fs'),
+    webpack = require('webpack');
 
 var pkg = JSON.parse(fs.readFileSync('./package.json'));
 
-var packageName = pkg.name, // kifu-parser
-    libraryName = 'kifuParser';
+var libraryName = 'kifuParser';
 
 var version = pkg.version;
 
