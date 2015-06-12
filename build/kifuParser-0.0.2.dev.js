@@ -1,5 +1,5 @@
 /**
- * kifuParser.js v0.0.1
+ * kifuParser.js v0.0.2
  *
  * Copyright (c) 2015 sandai <sandai310@gmail.com>
  * Released under the MIT license
@@ -1043,7 +1043,7 @@ KifParser.prototype.parseHeader = function(header) {
 
         if(line === null ||
            (line.charAt(0) !== '+' && line.charAt(0) !== '|')) {
-          throw new Error('position figure is Invlid.');
+          throw new Error('position figure is invalid.');
         }
 
         board.push(line);
@@ -1052,7 +1052,7 @@ KifParser.prototype.parseHeader = function(header) {
       board = this.parseHeaderBoard(board);
 
       if(board === null) {
-        throw new Error('position figure is Invlid.');
+        throw new Error('position figure is invalid.');
       }
 
       res.board = board;
@@ -1064,7 +1064,7 @@ KifParser.prototype.parseHeader = function(header) {
       var hand = this.parseHeaderHand(value);
 
       if(hand === null) {
-        throw new Error('hand piece is Invlid.');
+        throw new Error('hand piece is invalid.');
       }
 
       if(typeof res.hands === 'undefined') { res.hands = {}; }
@@ -2552,7 +2552,7 @@ Ki2Parser.prototype.turnToBoolean = function(turn) {
 
 Ki2Parser.prototype.turnCheck = function(turn, mturn) {
   if(turn !== mturn) {
-    throw new Error('turn symbol is Invalid.');
+    throw new Error('turn symbol is invalid.');
   }
 
   return (turn === 'black') ? 'white' : 'black';
@@ -2814,7 +2814,7 @@ CsaParser.prototype.parseHeader = function(header) {
 
           if(line === null ||
              line.charAt(0) !== 'P') {
-            throw new Error('position figure is Invlid.');
+            throw new Error('position figure is invalid.');
           }
 
           // NaNになるケースもあるが問題ないはず
@@ -2824,7 +2824,7 @@ CsaParser.prototype.parseHeader = function(header) {
             // 盤面図用
             arrboard.push(line);
           } else {
-            throw new Error('position figure is Invlid.');
+            throw new Error('position figure is invalid.');
           }
 
           order += 1;
@@ -2838,7 +2838,7 @@ CsaParser.prototype.parseHeader = function(header) {
           board = this.parseHeaderBoard(arrboard);
 
           if(board === null) {
-            throw new Error('position figure is Invlid.');
+            throw new Error('position figure is invalid.');
           }
 
           res.board = board;
@@ -2948,7 +2948,7 @@ CsaParser.prototype.turnToBoolean = function(turn) {
 
 CsaParser.prototype.turnCheck = function(turn, mturn) {
   if(turn !== mturn) {
-    throw new Error('turn symbol is Invalid.');
+    throw new Error('turn symbol is invalid.');
   }
 
   return (turn === '+') ? '-' : '+';
@@ -3092,7 +3092,7 @@ function parserFactory(source, format) {
   var trueFormat = '';
 
   if(source === null || typeof(source) !== 'string') {
-    throw new Error('KifuParser(source <-I need it yesterday!, format)');
+    throw new Error('KifuParser(source <-I need it yesterday!, format, json)');
   }
 
   trueFormat = checkFormat(funcUtils.toLines(source), format);
