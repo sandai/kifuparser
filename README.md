@@ -1,8 +1,8 @@
-#kifuParser.js
+# kifuParser.js
 
 kif, ki2, and csa data format into JSON or JavaScript Object
 
-##Kifu Format of JSON
+## Kifu Format of JSON
 
 {
 
@@ -94,10 +94,9 @@ kifuParser(source, format, json);
 * json
 	* Type: Boolean
 	* if you set ```true```: export JSON
-	* if you set ```false```: export JavaScript Object.
+	* if you set ```false```: export JavaScript Object
 
-
-###Browser:
+### Browser:
 
 ```html
 <script src="kifuParser-x.x.x.min.js"></script>
@@ -114,14 +113,14 @@ var json = kifuParser(kif, 'Kif', true);
 </script>
 ```
 
-###Node:
+### Node:
 
-####installation
+#### installation
 ```sh
 npm install kifu-parser --save-dev
 ```
 
-####example
+#### example
 ```js
 var kifuParser = require('kifu-parser');
 
