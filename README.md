@@ -85,7 +85,7 @@ kifuParser(source, format, json);
 ```
 
 * source
-	* Type:String
+	* Type: String
 	* kif, ki2, and csa text
 * format
 	* Type: String
