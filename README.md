@@ -38,7 +38,7 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 		* comment[string]
 	* [object]
 		* comment[string]
-		* hash[number]
+		* id[typeless]
 		* move[object]
 			* turn[boolean]
 			* from[array]
@@ -57,7 +57,7 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 				* .
 	* [object]
 		* comment[string]
-		* hash[number]
+		* id[typeless]
 		* move[object]
 			* turn[boolean]
 			* from[array]
