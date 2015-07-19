@@ -1,5 +1,5 @@
 /**
- * kifuParser.js v0.0.3
+ * kifuParser.js v0.0.4
  *
  * Copyright (c) 2015 sandai <sandai310@gmail.com>
  * Released under the MIT license
@@ -799,7 +799,7 @@ KifuBuilder.prototype.getKifuJSON = function() {
 
 KifuBuilder.prototype.build = function() {
   this.kifu.header = this.buildHeader();
-  this.kifu.source = this.buildBody();
+  this.kifu.sources = this.buildBody();
 };
 
 KifuBuilder.prototype.buildHeader = function() {
