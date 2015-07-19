@@ -1,5 +1,5 @@
 /**
- * kifuParser.js v0.0.2
+ * kifuParser.js v0.0.3
  *
  * Copyright (c) 2015 sandai <sandai310@gmail.com>
  * Released under the MIT license
@@ -755,12 +755,12 @@ var jsonStringify = (function() {
 })();
 
 var functionUtils = {
-  inherits: inherits,
-  trim: trim,
-  toLines: toLines,
-  validateDate: validateDate,
-  isEmptyObject: isEmptyObject,
-  jsonStringify: jsonStringify
+  'inherits': inherits,
+  'trim': trim,
+  'toLines': toLines,
+  'validateDate': validateDate,
+  'isEmptyObject': isEmptyObject,
+  'jsonStringify': jsonStringify
 };
 
 /*
@@ -1228,19 +1228,19 @@ KifParser.prototype.parseBody = function(body, header) {
 
       if(move.special) {
         pointer.push({
-          special: move.special
+          'special': move.special
         });
         continue;
       }
 
       pointer.push({
-        move: {
+        'move': {
           'turn': this.takeTurn(turnBase, firstTurn, move.num),
           'to': move.to,
           'from': move.from,
-          'piece': move.piece,
-          'time': move.time
-        }});
+          'piece': move.piece
+        },
+        'time': move.time});
 
       continue;
     case '*':
@@ -1460,16 +1460,16 @@ KifParser.prototype.parse = function() {
 
   if(res === null) {
     return {
-      header: null,
-      body: this.parseBody(this.source, null)
+      'header': null,
+      'body': this.parseBody(this.source, null)
     };
   }
 
   header = this.parseHeader(res[1]);
 
   return {
-    header: header,
-    body: this.parseBody(res[2], header)
+    'header': header,
+    'body': this.parseBody(res[2], header)
   };
 };
 
@@ -2478,13 +2478,13 @@ Ki2Parser.prototype.parseBody = function(body, header) {
 
       // ki2の仕様に時間は無いがKifuParserはtimeが必要なので0を入れておく
       pointer.push({
-        move: {
+        'move': {
           'turn': this.turnToBoolean(move.turn),
           'to': move.to,
           'from': move.from,
-          'piece': move.piece,
-          'time': 0
-        }});
+          'piece': move.piece
+        },
+        'time': 0});
       continue;
     case '*':
       var comment = (line === '*') ? '\n' : line.slice(1);
@@ -2900,14 +2900,15 @@ CsaParser.prototype.parseBody = function(body) {
       // 手番が正しいか確認
       turn = this.turnCheck(turn, move.turn);
 
+      // かならずtimeはつける。実際の時間はcase 'T':でつけられる
       main.push({
-        move: {
+        'move': {
           'turn': this.turnToBoolean(move.turn),
           'to': move.to,
           'from': move.from,
-          'piece': move.piece,
-          'time': 0 // かならずtimeはつける。実際の時間はcase 'T':でつけられる
-        }});
+          'piece': move.piece
+        },
+        'time': 0});
       continue;
     case '\'':
       // コメントでないならcontinue
@@ -2920,8 +2921,8 @@ CsaParser.prototype.parseBody = function(body) {
       var time = parseInt(line.slice(1), 10);
 
       if(isNaN(time) === false &&
-         main[main.length - 1].move) {
-        main[main.length - 1].move.time = time;
+         main[main.length - 1].time !== undefined) {
+        main[main.length - 1].time = time;
       }
 
       continue;
