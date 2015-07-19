@@ -14,31 +14,6 @@ describe('KifuBuilder.js', function() {
   });
 
   describe('KifuBuilder Constructor', function() {
-    it('this.kifuは空のオブジェクトである', function() {
-      expect(kifubuilder.kifu).toEqual({});
-    });
-    it('this.headerはobj.headerである', function() {
-      expect(kifubuilder.header).toEqual(header);
-    });
-    it('obj.headerがnullであればthis.headerには空オブジェクトが入る', function() {
-      var header = null;
-      kifubuilder = new KifuBuilder({'header': header, 'body': body});
-      expect(kifubuilder.header).toEqual({});
-    });
-    it('this.bodyはobj.bodyである', function() {
-      expect(kifubuilder.body).toEqual(body);
-    });
-  });
-
-  describe('KifuBuilder Class Method', function() {
-    it('KifuBuilder.createMainObject()は空オブジェクトを持つ配列を返す', function() {
-      expect(KifuBuilder.createMainObject()).toEqual([{}]);
-    });
-    it('KifuBuilder.createVariationsObject()は空配列を返す', function() {
-      expect(KifuBuilder.createVariationsObject()).toEqual([]);
-    });
-    it('KifuBuilder.createHeaderObject()は空オブジェクトを返す', function() {
-      expect(KifuBuilder.createHeaderObject()).toEqual({});
     });
   });
 
@@ -51,58 +26,7 @@ describe('KifuBuilder.js', function() {
   describe('KifuBuilder.prototype.getKifuJSON()', function() {
     it('this.kifuをJSONにして返す', function() {
       kifubuilder.build();
-      expect(kifubuilder.getKifuJSON()).toBe('{"header":{"dummy":"dymmy","handicap":0,"moves":0,"turn":true},"sources":[{}]}');
-    });
-  });
-
-  describe('KifuBuilder.prototype.build()', function() {
-    beforeEach(function () {
-      spyOn(kifubuilder, 'buildHeader');
-      spyOn(kifubuilder, 'buildBody');
-    });
-
-    it('buildHeader()とbuildBody()を呼び出している', function() {
-      kifubuilder.build();
-      expect(kifubuilder.buildHeader).toHaveBeenCalled();
-      expect(kifubuilder.buildBody).toHaveBeenCalled();
-    });
-  });
-
-  describe('KifuBuilder.prototype.buildHeader()', function() {
-    beforeEach(function () {
-      spyOn(kifubuilder, 'addTurnToHeader');
-      spyOn(kifubuilder, 'addHandicapToHeader');
-      spyOn(kifubuilder, 'addMovesToHeader');
-    });
-
-    it('this.header.turnがundefinedならaddTurnToHeader()を呼び出している', function() {
-      kifubuilder.buildHeader();
-      expect(kifubuilder.addTurnToHeader).toHaveBeenCalled();
-    });
-    it('this.header.handicapがundefinedならaddHandicapToHeader()を呼び出している', function() {
-      kifubuilder.buildHeader();
-      expect(kifubuilder.addHandicapToHeader).toHaveBeenCalled();
-    });
-    it('this.header.movesがundefinedならaddMovesToHeader()を呼び出している', function() {
-      kifubuilder.buildHeader();
-      expect(kifubuilder.addMovesToHeader).toHaveBeenCalled();
-    });
-    it('this.headerを返す', function() {
-      expect(kifubuilder.buildHeader()).toBe(kifubuilder.header);
-    });
-  });
-
-  describe('KifuBuilder.prototype.addTurnToHeader()', function() {
-    it('this.header.turnがなければ強制的に先手を意味するtrueを追加', function() {
-      kifubuilder.addTurnToHeader();
-      expect(kifubuilder.header.turn).toBeTruthy();
-    });
-  });
-
-  describe('KifuBuilder.prototype.addHandicapToHeader(handicap)', function() {
-    it('this.header.handicapに引数handicapの値を代入', function() {
-      kifubuilder.addHandicapToHeader(map.handicap('平手'));
-      expect(kifubuilder.header.handicap).toEqual(map.handicap('平手'));
+      expect(kifubuilder.getKifuJSON()).toBe('{"header":{"dummy":"dymmy","handicap":0,"moves":0},"initial":{"turn":true},"sources":[{}]}');
     });
   });
 

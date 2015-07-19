@@ -59,6 +59,7 @@ describe('Parser result Test for Node', function() {
           ki2 = kifuParser(ki2_source, 'Ki2', false);
 
       expect(kif.header).toEqual(ki2.header);
+      expect(kif.initial).toEqual(ki2.initial);
       expect(kif.sources).toEqual(ki2.sources);
     });
     it('Kif形式とCsa形式のパーサ結果が等しい',function() {
@@ -74,6 +75,7 @@ describe('Parser result Test for Node', function() {
       };
 
       expect(kif.header).toEqual(csa.header);
+      expect(kif.initial).toEqual(csa.initial);
       expect(kif.sources).toEqual(csa.sources);
     });
     it('Ki2形式とcsa形式のパーサ結果が等しい',function() {
@@ -89,6 +91,7 @@ describe('Parser result Test for Node', function() {
       };
 
       expect(ki2.header).toEqual(csa.header);
+      expect(ki2.initial).toEqual(csa.initial);
       expect(ki2.sources).toEqual(csa.sources);
     });
   });
@@ -99,6 +102,7 @@ describe('Parser result Test for Node', function() {
       var ki2 = kifuParser(ki2_v_source, 'Ki2', false);
 
       expect(kif.header).toEqual(ki2.header);
+      expect(kif.initial).toEqual(ki2.initial);
 
       // move.time以外を検査
       excludeTimeTest(kif.sources, ki2.sources);
@@ -111,6 +115,7 @@ describe('Parser result Test for Node', function() {
       var ki2 = kifuParser(ki2_b_source, 'Ki2', false);
 
       expect(kif.header).toEqual(ki2.header);
+      expect(kif.initial).toEqual(ki2.initial);
 
       // move.time以外を検査
       excludeTimeTest(kif.sources, ki2.sources);
@@ -120,6 +125,7 @@ describe('Parser result Test for Node', function() {
       var csa = kifuParser(csa_b_source, 'Csa', false);
 
       expect(ki2.header).toEqual(csa.header);
+      expect(ki2.initial).toEqual(csa.initial);
 
       // move.time以外を検査
       excludeTimeTest(ki2.sources, csa.sources);
