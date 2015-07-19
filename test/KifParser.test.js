@@ -275,23 +275,38 @@ describe('KifParser.js', function() {
       var comp = {
         'main':[
           {},
-          {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1,'time':0}},
-          {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1,'time':0}},
-          {'move':{'turn':true,'to':[2,2],'from':[8,8],'piece':13,'time':0}},
-          {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4,'time':0}}
+          {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1},
+           'time':0},
+          {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1},
+           'time':0},
+          {'move':{'turn':true,'to':[2,2],'from':[8,8],'piece':13},
+           'time':0},
+          {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4},
+           'time':0}
         ],
         'variations':[
-          [4,[{'move':{'turn':false,'to':[2,2],'from':[8,2],'piece':7,'time':0}}]],
-          [4,[{'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1,'time':0}},
-              {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1,'time':0}},
-              {'move':{'turn':false,'to':[8,5],'from':[8,4],'piece':1,'time':0}},
-              {'move':{'turn':true,'to':[2,5],'from':[2,6],'piece':1,'time':0}},
-              {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4,'time':0}}]],
-          [6,[{'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4,'time':0}},
-              {'move':{'turn':true,'to':[2,5],'from':[2,6],'piece':1,'time':0}},
-              {'move':{'turn':false,'to':[8,5],'from':[8,4],'piece':1,'time':0}}]],
-          [2,[{'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1,'time':0}},
-              {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1,'time':0}}]]
+          [4,[{'move':{'turn':false,'to':[2,2],'from':[8,2],'piece':7},
+               'time':0}]],
+          [4,[{'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1},
+               'time':0},
+              {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1},
+               'time':0},
+              {'move':{'turn':false,'to':[8,5],'from':[8,4],'piece':1},
+               'time':0},
+              {'move':{'turn':true,'to':[2,5],'from':[2,6],'piece':1},
+               'time':0},
+              {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4},
+               'time':0}]],
+          [6,[{'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4},
+               'time':0},
+              {'move':{'turn':true,'to':[2,5],'from':[2,6],'piece':1},
+               'time':0},
+              {'move':{'turn':false,'to':[8,5],'from':[8,4],'piece':1},
+               'time':0}]],
+          [2,[{'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1},
+               'time':0},
+              {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1},
+               'time':0}]]
         ]};
 
       expect(parser.parseBody(body, null)).toEqual(comp);
@@ -313,16 +328,25 @@ describe('KifParser.js', function() {
 
       var comp = {'main':[
         {},
-        {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1,'time':1}},
-        {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1,'time':1},
+        {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1},
+         'time':1},
+        {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1},
+         'time':1,
          'comment': 'コメント1\n\nコメント2'},
-        {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1,'time':0}},
-        {'move':{'turn':false,'to':[4,2],'from':[8,2],'piece':7,'time':1}},
-        {'move':{'turn':true,'to':[6,8],'from':[5,9],'piece':8,'time':1}},
-        {'move':{'turn':false,'to':[8,8],'from':[2,2],'piece':13,'time':2}},
-        {'move':{'turn':true,'to':[8,8],'from':[7,9],'piece':4,'time':1}},
-        {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4,'time':2}},
-        {'move':{'turn':true,'to':[7,8],'from':[6,8],'piece':8,'time':1}}]};
+        {'move':{'turn':true,'to':[2,6],'from':[2,7],'piece':1},
+         'time':0},
+        {'move':{'turn':false,'to':[4,2],'from':[8,2],'piece':7},
+         'time':1},
+        {'move':{'turn':true,'to':[6,8],'from':[5,9],'piece':8},
+         'time':1},
+        {'move':{'turn':false,'to':[8,8],'from':[2,2],'piece':13},
+         'time':2},
+        {'move':{'turn':true,'to':[8,8],'from':[7,9],'piece':4},
+         'time':1},
+        {'move':{'turn':false,'to':[2,2],'from':[3,1],'piece':4},
+         'time':2},
+        {'move':{'turn':true,'to':[7,8],'from':[6,8],'piece':8},
+        'time':1}]};
 
       expect(parser.parseBody(body, null)).toEqual(comp);
     });
@@ -337,12 +361,17 @@ describe('KifParser.js', function() {
       var comp = {
         'main':[
           {},
-          {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1,'time':0}},
-          {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1,'time':0}},
-          {'move':{'turn':true,'to':[2,2],'from':[8,8],'piece':13,'time':0}},
-          {'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1,'time':0}}],
+          {'move':{'turn':true,'to':[7,6],'from':[7,7],'piece':1},
+           'time':0},
+          {'move':{'turn':false,'to':[3,4],'from':[3,3],'piece':1},
+           'time':0},
+          {'move':{'turn':true,'to':[2,2],'from':[8,8],'piece':13},
+           'time':0},
+          {'move':{'turn':false,'to':[8,4],'from':[8,3],'piece':1},
+           'time':0}],
         'variations':[
-          [4,[{'move':{'turn':false,'to':[2,2],'from':[8,2],'piece':7,'time':0}}]]]};
+          [4,[{'move':{'turn':false,'to':[2,2],'from':[8,2],'piece':7},
+                       'time':0}]]]};
 
       var res = parser.parseBody(body, null);
 

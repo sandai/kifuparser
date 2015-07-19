@@ -171,10 +171,13 @@ describe('CsaParser.js', function() {
 
       var comp = {'main':[
         {},
-        {'move':{'turn': true, 'to':[3,7], 'from':[6,4], 'piece':6, 'time':0},
+        {'move':{'turn': true, 'to':[3,7], 'from':[6,4], 'piece':6},
+         'time':0,
          'comment':'コメントあいうえお\n\nコメントあいうえお'},
-        {'move':{'turn': false, 'to':[3,7], 'from':[2,6], 'piece':14, 'time':100}},
-        {'move':{'turn': true, 'to':[3,7], 'from':[3,8], 'piece':4, 'time':0}},
+        {'move':{'turn': false, 'to':[3,7], 'from':[2,6], 'piece':14},
+         'time':100},
+        {'move':{'turn': true, 'to':[3,7], 'from':[3,8], 'piece':4},
+         'time':0},
         {'special':'%TORYO'}]};
 
       expect(parser.parseBody(body)).toEqual(comp);
