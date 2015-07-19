@@ -51,7 +51,7 @@ describe('KifuBuilder.js', function() {
   describe('KifuBuilder.prototype.getKifuJSON()', function() {
     it('this.kifuをJSONにして返す', function() {
       kifubuilder.build();
-      expect(kifubuilder.getKifuJSON()).toBe('{"header":{"dummy":"dymmy","handicap":0,"moves":0,"turn":true},"source":[{}]}');
+      expect(kifubuilder.getKifuJSON()).toBe('{"header":{"dummy":"dymmy","handicap":0,"moves":0,"turn":true},"sources":[{}]}');
     });
   });
 

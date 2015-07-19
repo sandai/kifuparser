@@ -33,7 +33,7 @@ kif, ki2, and csa data format into JSON or JavaScript Object
 	* hands[object]
 		* black[object]
 		* white[object]
-* source[array]
+* sources[array]
 	* [object]
 		* comment[string]
 	* [object]

@@ -43,7 +43,7 @@ describe('Parser result Test for Node', function() {
     it('JavaScriptオブジェクトの棋譜データを返す', function() {
       var kif = kifuParser(kif_source, 'Kif', false);
       expect(typeof(kif)).toEqual('object');
-      expect(kif.source).toBeDefined();
+      expect(kif.sources).toBeDefined();
     });
     it('JSON形式の棋譜データを返す', function() {
       var kif = kifuParser(kif_source, 'Kif', true);
@@ -59,7 +59,7 @@ describe('Parser result Test for Node', function() {
           ki2 = kifuParser(ki2_source, 'Ki2', false);
 
       expect(kif.header).toEqual(ki2.header);
-      expect(kif.source).toEqual(ki2.source);
+      expect(kif.sources).toEqual(ki2.sources);
     });
     it('Kif形式とCsa形式のパーサ結果が等しい',function() {
       var kif = kifuParser(kif_source, 'Kif', false),
@@ -74,7 +74,7 @@ describe('Parser result Test for Node', function() {
       };
 
       expect(kif.header).toEqual(csa.header);
-      expect(kif.source).toEqual(csa.source);
+      expect(kif.sources).toEqual(csa.sources);
     });
     it('Ki2形式とcsa形式のパーサ結果が等しい',function() {
       var ki2 = kifuParser(ki2_source, 'Ki2', false),
@@ -89,7 +89,7 @@ describe('Parser result Test for Node', function() {
       };
 
       expect(ki2.header).toEqual(csa.header);
-      expect(ki2.source).toEqual(csa.source);
+      expect(ki2.sources).toEqual(csa.sources);
     });
   });
 
@@ -101,7 +101,7 @@ describe('Parser result Test for Node', function() {
       expect(kif.header).toEqual(ki2.header);
 
       // move.time以外を検査
-      excludeTimeTest(kif.source, ki2.source);
+      excludeTimeTest(kif.sources, ki2.sources);
     });
   });
 
@@ -113,7 +113,7 @@ describe('Parser result Test for Node', function() {
       expect(kif.header).toEqual(ki2.header);
 
       // move.time以外を検査
-      excludeTimeTest(kif.source, ki2.source);
+      excludeTimeTest(kif.sources, ki2.sources);
     });
     it('Ki2形式とCsa形式の開始局面がある棋譜のパーサ結果が等しい',function() {
       var ki2 = kifuParser(ki2_b_source, 'Ki2', false);
@@ -122,7 +122,7 @@ describe('Parser result Test for Node', function() {
       expect(ki2.header).toEqual(csa.header);
 
       // move.time以外を検査
-      excludeTimeTest(ki2.source, csa.source);
+      excludeTimeTest(ki2.sources, csa.sources);
     });
   });
 });
